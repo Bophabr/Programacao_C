@@ -1,0 +1,131 @@
+#include <stdio.h>
+
+int main() {
+    printf("Bem Vindo ao Jogo do Super Trunfo:\n");
+    printf("Informe duas cartas do Super Trunfo:\n");
+
+   // Carta_1
+    char estado1[2];
+    char codigo1[5];
+    char cidade1[35];
+    unsigned long int populacao1;
+    float area1;
+    float PIB1;
+    int pontosturisticos1;
+    float densidade_populacional1;
+    float PIBpercapita1;
+    densidade_populacional1 = (float)(populacao1 / area1);
+    PIBpercapita1 = (float)(PIB1 / populacao1);
+
+    // Carta_2
+    char estado2[2];
+    char codigo2[5];
+    char cidade2[35];
+    unsigned long int populacao2;
+    float area2;
+    float PIB2;
+    int pontosturisticos2;
+    float densidade_populacional2;
+    float PIBpercapita2;
+    float SUPERPODER1;
+    float SUPERPODER2;
+
+    //Inicialização das variáveis
+
+    int resultado_populacao = 0;
+    float resultado_area = 0;
+    float resultado_pib = 0;
+    int resultado_pontosturisticos = 0;
+    float resultado_densidadepopulacional = 0;
+    float resultado_pibpercapita = 0;
+    float resultado_SUPERPODER = 0;
+    
+    int comparador_populacao = 0;
+    
+    printf("Entre com o Primeiro estado: (Informe apenas uma letra de 'A' a 'H' ) \n");
+    scanf("%s", estado1);
+    printf("Digite o primeiro código? (Letra do Estado seguido de um número)\n");
+    scanf("%s", codigo1);
+    printf("Digite o nome da primeira cidade? \n");
+    scanf("%s", cidade1);
+    printf("Digite a primeira população? \n");
+    scanf("%ld", &populacao1);
+    printf("Digite a primeira área(km²) cidade? \n");
+    scanf("%f", &area1);
+    printf("Digite o primeiro PIB? \n");
+    scanf("%f", &PIB1);
+    printf("Digite o primeiro pontos turístico \n");
+    scanf("%d", &pontosturisticos1);
+
+    
+    densidade_populacional1 = populacao1 / area1;
+
+    PIBpercapita1 = PIB1 / populacao1;
+
+    SUPERPODER1 = populacao1 + area1 + PIB1 + pontosturisticos1 + PIBpercapita1 + (1 / densidade_populacional1);
+
+    printf("Entre com o Segundo estado: (Informe apenas uma letra de 'A' a 'H' ) \n");
+    scanf("%s", estado2);
+    printf("Digite o segundo código (Letra do Estado seguido de um número)\n");
+    scanf("%s", codigo2);
+    printf("Qual o nome da segunda cidade? \n");
+    scanf("%s", cidade2);
+    printf("Digite a segunda população? \n");
+    scanf("%ld", &populacao2);
+    printf("Digite a segunda área(km²) cidade? \n");
+    scanf("%f", &area2);
+    printf("Digite o segundo PIB? \n");
+    scanf("%f", &PIB2);
+    printf("Digite o segundo ponto turístico \n");
+    scanf("%d", &pontosturisticos2);
+
+    densidade_populacional2 = populacao2 / area2;
+
+    PIBpercapita2 = PIB2 / populacao2;
+
+    SUPERPODER2 = populacao2 + area2 + PIB2 + pontosturisticos2 + PIBpercapita2 + (1 / densidade_populacional2);
+
+    printf("Dados da primeira carta:\n");
+    printf("Estado: %s\n", estado1);
+    printf("Código: %s\n", codigo1);
+    printf("Cidade: %s\n", cidade1);
+    printf("População: %ld\n", populacao1);
+    printf("Area: %.2fKm²\n", area1);
+    printf("PIB: %.2f\n", PIB1);
+    printf("Pontos turisticos: %d\n", pontosturisticos1);
+    printf("Densidade populacional: %.2f \n", densidade_populacional1);
+    printf("PIB per capita: %.2f \n", PIBpercapita1);
+
+     //Carta 2
+    printf("\ninformacoes da carta 2:\n");
+    printf("Estado: %s \n", estado2);
+    printf("Codigo: %s \n", codigo2);
+    printf("Cidade: %s\n", cidade2);
+    printf("Populaçao: %ld \n", populacao2);
+    printf("Area: %.2fkm² \n", area2);
+    printf("PIB: %.2f \n", PIB2);
+    printf("Pontos Turisticos: %d \n", pontosturisticos2);
+    printf("Densidade populacional: %.2f \n", densidade_populacional2);
+    printf("PIB per capita: %.2f \n", PIBpercapita2);
+
+    // Calculando os resultados
+    resultado_populacao = populacao1 > populacao2;
+    resultado_area = area1 > area2;
+    resultado_pib = PIB1 > PIB2;
+    resultado_pontosturisticos = pontosturisticos1 > pontosturisticos2;
+    resultado_densidadepopulacional = densidade_populacional1 > densidade_populacional2;
+    resultado_pibpercapita = PIBpercapita1 > PIBpercapita2;
+    resultado_SUPERPODER = SUPERPODER1 > SUPERPODER2;
+    
+    printf("\n ---DUELO DE CARTAS--- \n");
+    printf("A maior população é da carta: %d\n" , resultado_populacao);
+    printf("A maior Área é da carta: %2.f\n" , resultado_area);
+    printf("O maior PIB é da carta: %.2f\n" , resultado_pib);
+    printf("A carta com mais pontos turísticos é da carta: %d\n" , resultado_pontosturisticos);
+    printf("A menor densidade populacional é da carta: %.2f\n" , resultado_densidadepopulacional);
+    printf("O maior PIB per capita é da carta: %.2f\n" , resultado_pibpercapita);
+    printf("SUPERPODER (todas acimas somadas): %.2f\n" , resultado_SUPERPODER);
+
+    return 0;
+
+    }
